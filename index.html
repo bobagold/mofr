@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Модульность и фреймворкозависимость</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Модульность и фреймворкозависимость</h1>
+		<p>Владимир Голдобин, XIAG</p>
+	</header>
+	<section class="slide cover" id="Cover"><div>
+		<h2>Модульность</h2>
+		<img src="pictures/cover.jpg" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>Как мы дошли до жизни такой</h2>
+		<ol>
+			<li>Толстые контроллеры и клиенты</li>
+			<li>Сеньоры программисты</li><!-- class="next"-->
+		</ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Модульность на уровне обработки запроса</h2>
+		<ol>
+            <li>fake subrequests</li>
+            <li>real (http, rpc) subrequests (накладные расходы, масштабируемость)</li>
+            <li>ESI (Edge Side Includes) (внешнее кеширование)</li>
+            <li>MQ (асинхронность, разгрузка, надежность)</li>
+            <li>Client side (ajax)</li>
+        </ol>
+	</div></section>
+    <section class="slide"><div>
+        <h2>На уровне логики (картинки)</h2>
+        <ol>
+            <li>listener<br/>
+                <img src="pictures/listener.jpg" alt="" height="100"/></li>
+
+            <li>middleware
+                </li>
+            <li>ioc (aop, xml)<br/>
+                <img src="pictures/tbb.jpg" alt="" height="100"/>
+                <img src="pictures/lsd.jpg" alt="" height="100"/>
+                <img src="pictures/lhi.jpg" alt="" height="100"/></li>
+
+        </ol>
+    </div></section>
+	<section class="slide"><div>
+		<h2>На уровне кода</h2>
+		<ol>
+            <li>Пакеты</li>
+            <li>Неймспейсы</li>
+            <li>Классы</li>
+        </ol>
+	</div></section>
+    <section class="slide cover"><div>
+        <h2>Фреймворкозависимость</h2>
+        <img src="pictures/cover.jpg" alt="">
+    </div></section>
+	<section class="slide"><div>
+		<h2>Фреймворк помогает уменьшать зависимости</h2>
+		<ol>
+            <li>отделяться от реального http запроса/ответа/сессии</li>
+            <li>структурировать фронт-контроллеры</li>
+            <li>отделять вид, модели и контроллеры</li>
+            <li>отделять бд от модели данных</li>
+            <li>выкашивать любую логику из вида и возвращать ее обратно</li>
+            <li>абстракция формы, пейджера</li>
+            <li>...</li>
+        </ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>хороший ф</h2>
+		<ol>
+            <li>который не замечаешь.</li>
+            <li>набор (опциональных) практик</li>
+            <li>нужно только настроить</li>
+            <li>решает утилитарные задачи</li>
+            <li>не связан с бизнес-логикой приложения</li>
+
+        </ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>нормальный ф</h2>
+		<ol>
+            <li>диктует правила как вообще работать</li>
+
+        </ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>плохой ф</h2>
+		<ol>
+            <li>фреймворк - основная часть приложения</li>
+            <li>1m1v1c (на любой реквест 1 модель 1 вид 1 контроллер)</li>
+            <li>жирные контроллеры</li>
+            <li>роутинг сильно завязан на имена файлов/классов/методов</li>
+            <li>модели/виды/... наследуются от общего предка</li>
+            <li>кодогенераторы или необходимость в них (если есть CRUD,..)</li>
+            <li>общие фичи приложения сразу же добавляются в фреймворк</li>
+
+        </ol>
+	</div></section>
+	<section class="slide shout" id="SeeMore"><div>
+		<h2>Сделано в <a href="http://shwr.me/">Shower</a></h2>
+		<style>
+			#Picture h2 {
+				color:#FFF;
+				}
+			#SeeMore h2 {
+				font-size:100px
+				}
+			#SeeMore img {
+				width:0.72em;
+				height:0.72em;
+				}
+		</style>
+	</div></section>
+	<p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2013 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
